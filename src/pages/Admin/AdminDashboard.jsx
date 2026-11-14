@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AdminDashboard.css";
@@ -6,27 +7,27 @@ import AdminNavbar from "./components/AdminNavbar";
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState({
-  totalUsers: 0,
-  totalSessions: 0,
-  totalGoals: 0,
-  activeUsers: 0,
-});
-const fetchDashboard = async () => {
-  try {
-    const res = await axios.get(
-"https://my-project-nsjg.onrender.com/api/admin/dashboard"
-    );
+    totalUsers: 0,
+    totalSessions: 0,
+    totalGoals: 0,
+    activeUsers: 0,
+  });
 
-    console.log(res.data); // 👈 Add this
+  const fetchDashboard = async () => {
+    try {
+      const res = await axios.get(
+        "https://my-project-nsjg.onrender.com/api/admin/dashboard"
+      );
+      setStats(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    setStats(res.data);
-  } catch (error) {
-    console.log(error);
-  }
-};
-useEffect(() => {
-  fetchDashboard();
-}, []);
+  useEffect(() => {
+    fetchDashboard();
+  }, []);
+
   return (
     <div className="admin-layout">
 
@@ -52,17 +53,15 @@ useEffect(() => {
           <div className="stat-card">
             <h2>Total Goals</h2>
             <p>{stats.totalGoals}</p>
-          
           </div>
 
           <div className="stat-card">
             <h2>Active Users</h2>
-           <p>{stats.activeUsers}</p>
+            <p>{stats.activeUsers}</p>
           </div>
         </div>
 
       </div>
-
     </div>
   );
 };

@@ -16,6 +16,7 @@ import AdminDashboard from "./pages/Admin/AdminDashboard";
 import Users from "./pages/Admin/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminProtectedRoute from "./components/AdminProtectedRoute";
+import AdminSessions from "./pages/Admin/AdminSessions";
 function App() {
   return (
     <Router>
@@ -76,6 +77,7 @@ function App() {
         <Route path="/python-tracker" element={<PythonTracker />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/c++tracker" element={<cpptracker />} />
+        <Route path="/admin/sessions" element={<AdminSessions />} />
         <Route
           path="/admin/users"
           element={
@@ -83,6 +85,7 @@ function App() {
               <Users />
             </AdminProtectedRoute>
           }
+          
         />{" "}
       </Routes>
     </Router>

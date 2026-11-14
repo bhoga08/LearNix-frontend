@@ -1,16 +1,26 @@
+
 import React from "react";
 import {
   FiSearch,
   FiBell,
   FiUser,
-  FiMoon
+  FiMoon,
+  FiMenu,
+  FiX
 } from "react-icons/fi";
 
 import "./AdminNavbar.css";
 
-const AdminNavbar = () => {
+const AdminNavbar = ({ toggleSidebar, isOpen }) => {
   return (
     <header className="admin-navbar">
+
+      <button
+        className="hamburger"
+        onClick={toggleSidebar}
+      >
+        {isOpen ? <FiX /> : <FiMenu />}
+      </button>
 
       <div className="search-box">
         <FiSearch />
@@ -39,7 +49,6 @@ const AdminNavbar = () => {
         </div>
 
       </div>
-
     </header>
   );
 };

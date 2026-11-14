@@ -90,3 +90,40 @@
 }
 
 }
+
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #1e293b;
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .admin-navbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hamburger {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .search-box {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .search-box input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+}
