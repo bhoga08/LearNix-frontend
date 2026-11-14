@@ -175,3 +175,87 @@
   background-color: var(--learnix-blue-dark);
   transform: scale(1.05);
 }
+
+.duration-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.duration-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: white;
+  color: #222;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.duration-card strong {
+  font-size: 22px;
+}
+
+.duration-card span {
+  font-weight: 600;
+}
+
+.duration-card small {
+  color: #777;
+}
+
+.duration-card:hover {
+  border-color: #6366f1;
+}
+
+.duration-card.active {
+  border-color: #6366f1;
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.custom-duration-btn {
+  margin-top: 14px;
+  padding: 11px 16px;
+  border: 1px dashed #6366f1;
+  border-radius: 8px;
+  background: transparent;
+  color: #4f46e5;
+  cursor: pointer;
+}
+
+.custom-duration-btn.active {
+  background: #eef2ff;
+}
+
+.custom-duration-input {
+  margin-top: 15px;
+}
+
+.custom-duration-input input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.duration-summary {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .duration-options {
+    grid-template-columns: 1fr;
+  }
+}
